@@ -1,6 +1,6 @@
 return {
-  'ThePrimeagen/harpoon', 
-  dependencies = {'nvim-lua/plenary.nvim'},
+  'ThePrimeagen/harpoon',
+  dependencies = { 'nvim-lua/plenary.nvim' },
   config = function()
     local harpoon_mark = require("harpoon.mark")
     local harpoon_ui = require("harpoon.ui")
@@ -12,15 +12,14 @@ return {
     end
 
     local function nav_to_file(idx)
-       print(string.format("Jumped to file %d", idx))
-       harpoon_ui.nav_file(idx)
+      print(string.format("Jumped to file %d", idx))
+      harpoon_ui.nav_file(idx)
     end
 
     local function open_terminal(idx)
       print(string.format("Opened teminal %d", idx))
       harpoon_term.gotoTerminal(idx)
     end
-
 
     -- harpoon file mappings
     vim.keymap.set('n', '<leader>ha', add_to_harpoon)
