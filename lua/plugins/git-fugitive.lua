@@ -10,7 +10,7 @@ return {
     vim.keymap.set("n", "<leader>gl", ":Git log --oneline<CR>")
     vim.keymap.set("n", "<leader>gL", ":Git log<CR>")
     -- git stash
-    vim.keymap.set("n", "<leader>gSs", ":Git stash<CR>")
-    vim.keymap.set("n", "<leader>gSp", ":Git stash pop<CR>")
+    vim.keymap.set("n", "<leader>gSS", ":Git stash<CR>")
+    vim.keymap.set("n", "<leader>gSP", ":Git stash pop<CR>")
   end
 }
