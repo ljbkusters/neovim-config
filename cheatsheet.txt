@@ -2,6 +2,17 @@
 Source vimrc config (Note: this does not reload plugins!) | :<leader>sv
 Open mappings view | :<leader>m
 
+## surround @nvim-surround
+general | [y(add)/d(delete)/c(change)]s[motion][character]
+add surround: surround_words: surr*ound_words -> (surround_words)  | ysiw)
+add surround: make strings: *make strings -> "make strings" | ys$"
+delete surround: [delete ar*ound me!] -> delete around me!| ds]
+change surround: 
+add tags: HTML ta*gs -> HTML <b>tags</b> | yst[TAG:b]<CR>
+delete tags: <b>HTML ta*gs</b> -> HTML tags | dst
+change tags: <b>HTML ta*gs</b> -> <h1>HTML tags</h1> | cst[TAG:h1]<CR>
+delete function: delete(functi*on args) -> function args | dsf
+
 ## harpoon @tab @switch
 Add file to harpoon quick menu | :<leader>ha
 Show/hide (toggle) harpoon quick access menu | :<leader>hm
