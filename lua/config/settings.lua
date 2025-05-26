@@ -16,22 +16,22 @@ vim.cmd("set clipboard+=unnamedplus")
 -- spaces and tabs, indentation
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
-vim.opt.softtabstop=2
+vim.opt.softtabstop = 2
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 vim.opt.wrap = false
 
 -- swp files
-vim.opt.swapfile=false
-vim.opt.backup=false
+vim.opt.swapfile = false
+vim.opt.backup = false
 
 -- undo
-vim.opt.undodir=os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile=true
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
 
 vim.opt.hlsearch = false
-vim.opt.incsearch = true 
+vim.opt.incsearch = true
 
 -- seems to have no difference here..
 vim.opt.termguicolors = true
