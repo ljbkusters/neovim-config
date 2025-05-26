@@ -28,6 +28,7 @@ return {
       },
     },
     -- on_attach = function() end,
-    vim.keymap.set("n", "<leader>pv", ":NvimTreeToggle<CR>"),
+    vim.keymap.set("n", "<leader>pf", ":NvimTreeFocus<CR>"),
+    vim.keymap.set("n", "<leader>pt", ":NvimTreeToggle<CR>"),
   },
 }
