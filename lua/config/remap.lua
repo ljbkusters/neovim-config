@@ -1,7 +1,9 @@
+-- VIM REMAPS
+--
+-- Note that this file must be loaded BEFORE lazy!
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- go to file tree
 
 -- ease of life
 vim.keymap.set("n", "J", "mzJ`z") -- J but cursor stays in place
