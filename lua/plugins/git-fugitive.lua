@@ -12,5 +12,8 @@ return {
     -- git stash
     vim.keymap.set("n", "<leader>gSS", ":Git stash<CR>")
     vim.keymap.set("n", "<leader>gSP", ":Git stash pop<CR>")
+
+    local alias = require("config.command-aliases")
+    alias.setup_alias("git", "Git")
   end
 }
