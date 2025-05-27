@@ -1,34 +1,36 @@
 return {
   "nvim-tree/nvim-tree.lua",
-  opts = {
-    sort = {
-      sorter = "case_sensitive",
-    },
-    view = {
-      width = 30,
-    },
-    filters = {
-      dotfiles = true,
-    },
-    renderer = {
-      group_empty = true,
-      icons = {
-        glyphs = {
-          git = {
-            -- unstaged = "✗",
-            -- staged = "✓",
-            -- unmerged = "",
-            -- renamed = "➜",
-            -- untracked = "★",
-            -- deleted = "",
-            -- ignored = "◌",
+  config = function()
+    require("nvim-tree").setup({
+      sort = {
+        sorter = "case_sensitive",
+      },
+      view = {
+        width = 30,
+      },
+      filters = {
+        dotfiles = true,
+      },
+      renderer = {
+        group_empty = true,
+        icons = {
+          glyphs = {
+            git = {
+              -- unstaged = "✗",
+              -- staged = "✓",
+              -- unmerged = "",
+              -- renamed = "➜",
+              -- untracked = "★",
+              -- deleted = "",
+              -- ignored = "◌",
+            },
           },
         },
       },
-    },
-    -- on_attach = function() end,
-    vim.keymap.set("n", "<leader>pf", ":NvimTreeFocus<CR>"),
-    vim.keymap.set("n", "<leader>pc", ":NvimTreeClose<CR>"),
+    })
+
+    vim.keymap.set("n", "<leader>pf", ":NvimTreeFocus<CR>")
+    vim.keymap.set("n", "<leader>pc", ":NvimTreeClose<CR>")
 
     -- SOURCE: https://github.com/nvim-tree/nvim-tree.lua/wiki/Recipes#make-q-and-bd-work-as-if-tree-was-not-visible
     -- Make :bd and :q behave as usual when tree is visible
@@ -67,7 +69,15 @@ return {
           end, 10)
         end
       end
-    }),
+    })
     -- /SOURCE
-  },
+    local nt_api = require('nvim-tree.api')
+    nt_api.events.subscribe(nt_api.events.Event.TreeOpen, function()
+      local tree_winid = nt_api.tree.winid()
+
+      if tree_winid ~= nil then
+        vim.api.nvim_set_option_value('statusline', '%t', { win = tree_winid })
+      end
+    end)
+  end
 }
