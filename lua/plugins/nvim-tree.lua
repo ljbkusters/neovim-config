@@ -9,7 +9,7 @@ return {
         width = 30,
       },
       filters = {
-        dotfiles = true,
+        dotfiles = false,
       },
       renderer = {
         group_empty = true,
