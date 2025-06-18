@@ -13,12 +13,6 @@
 
 return {
   "mason-org/mason-lspconfig.nvim",
-  opts = {
-    ensure_installed = {
-      "lua_ls",
-      "pyright",
-    },
-  },
   dependencies = {
     -- manage LSP servers
     { "mason-org/mason.nvim", opts = {} },
@@ -35,11 +29,16 @@ return {
     },
   },
   config = function()
+    require('mason-lspconfig').setup({
+      ensure_installed = {
+        "lua_ls",
+        "pyright",
+      },
+    })
+
     local lspconfig = require('lspconfig')
     -- setup LSP server configs
     -- TODO: somehow manage this with handlers???
-    lspconfig.lua_ls.setup({})
-    lspconfig.pyright.setup({})
 
     -- LSP functinality bindings
     vim.api.nvim_create_autocmd('LspAttach', {
