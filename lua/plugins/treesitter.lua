@@ -10,5 +10,8 @@ return {
       "vim",
       "vimdoc",
     },
+    highlight = {
+      enable = true,
+    },
   },
 }
