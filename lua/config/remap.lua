@@ -15,3 +15,4 @@ vim.keymap.set("n", "J", "mzJ`z") -- J but cursor stays in place
 vim.keymap.set("n", "n", "nzzzv") -- search n but cursor stays in place
 vim.keymap.set("n", "N", "Nzzzv") -- search N but cursor stays in place
 
+vim.keymap.set("n", "<leader>so", ":source %<CR>")
