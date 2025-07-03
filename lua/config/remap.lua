@@ -16,3 +16,6 @@ vim.keymap.set("n", "n", "nzzzv") -- search n but cursor stays in place
 vim.keymap.set("n", "N", "Nzzzv") -- search N but cursor stays in place
 
 vim.keymap.set("n", "<leader>so", ":source %<CR>")
+
+-- test nvim lua plugin file using plenary busted
+vim.keymap.set("n", "<leader>tf", "<cmd>PlenaryBustedFile %<CR>")
