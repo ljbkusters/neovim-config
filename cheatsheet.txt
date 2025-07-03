@@ -1,6 +1,6 @@
 ## default @neovim @simple
-Source vimrc config (Note: this does not reload plugins!) | :<leader>sv
-Open mappings view | :<leader>m
+Source vimrc config (Note: this does not reload plugins!) | <leader>sv
+Open mappings view | <leader>m
 
 ## surround @nvim-surround
 general | [y(add)/d(delete)/c(change)]s[motion][character]
@@ -14,50 +14,51 @@ change tags: <b>HTML ta*gs</b> -> <h1>HTML tags</h1> | cst[TAG:h1]<CR>
 delete function: delete(functi*on args) -> function args | dsf
 
 ## harpoon @tab @switch
-Add file to harpoon quick menu | :<leader>ha
-Show/hide (toggle) harpoon quick access menu | :<leader>hm
-Open next harpoon file in this buffer | :<leader>hj
-open previous harpoon file in this buffer | :<leader>hk
-open first harpoon file | :<C-j> 
-open second harpoon file | :<C-k> 
-open third harpoon file | :<C-l> 
-open fourth harpoon file | :<C-;> 
-open {i}-th (harpoon) terminal | :<leader>t{i} 
+Add file to harpoon quick menu | <leader>ha
+Show/hide (toggle) harpoon quick access menu | <leader>hm
+Open next harpoon file in this buffer | <leader>hj
+open previous harpoon file in this buffer | <leader>hk
+open first harpoon file | <C-j> 
+open second harpoon file | <C-k> 
+open third harpoon file | <C-l> 
+open fourth harpoon file | <C-;> 
+open {i}-th (harpoon) terminal | <leader>t{i} 
 
 ## LSP @diagnostics
-LSP hover | :K 
-jump to definition | :<leader>ld 
-jump to declaration | :<leader>lD 
-jump to implementation | :<leader>li 
-show type definition | :<leader>lt 
-show references | :<leader>lr 
-show signature help | :<leader>ls 
-refactor rename symbol | :<leader>R 
-show code actions | :<leader>la 
-open float  | :<leader>lf 
-jump to next diagnostic | :[d 
-jump to previous diagnostic | :]d 
-format | :<leader>F 
+LSP hover | K 
+jump to definition | <leader>ld 
+jump to declaration | <leader>lD 
+jump to implementation | <leader>li 
+show type definition | <leader>lt 
+show references | <leader>lr 
+show signature help | <leader>ls 
+refactor rename symbol | <leader>R 
+show code actions | <leader>la 
+show diagnostics | <leader>l? 
+open float  | <leader>lf 
+jump to next diagnostic | [d 
+jump to previous diagnostic | ]d 
+format | <leader>F 
 
 ## Telescope 
-open fuzzy file search | :<leader>ff 
-open git only fuzzy file search | :<leader>fg 
-ripgrep search terms inside of files | :<leader>fs 
+open fuzzy file search | <leader>ff 
+open git only fuzzy file search | <leader>fg 
+ripgrep search terms inside of files | <leader>fs 
 
 ## gitgutter @git
-jump to previous hunk | :[c 
-jump to next hunk | :]c 
-preview hunk | :<leader>hp 
-stage hunk | :<leader>hs 
-undo hunk | :<leader>hu 
+jump to previous hunk | [c 
+jump to next hunk | ]c 
+preview hunk | <leader>hp 
+stage hunk | <leader>hs 
+undo hunk | <leader>hu 
 
 ## fugitive @git
-git commit | :<leader>gc 
-Add current file | :<leader>ga 
-git diff | :<leader>gd 
-git diff --staged | :<leader>gD 
-git status | :<leader>gs 
-git log --oneline | :<leader>gl 
-git log  | :<leader>gL 
-git stage  | :<leader>gSS 
-git stage pop | :<leader>gSS 
+git commit | <leader>gc 
+Add current file | <leader>ga 
+git diff | <leader>gd 
+git diff --staged | <leader>gD 
+git status | <leader>gs 
+git log --oneline | <leader>gl 
+git log  | <leader>gL 
+git stage  | <leader>gSS 
+git stage pop | <leader>gSP 
