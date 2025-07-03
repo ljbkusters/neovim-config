@@ -34,9 +34,9 @@ return {
         "lua_ls",
         "pyright",
       },
+      automatic_enable = true,
     })
 
-    local lspconfig = require('lspconfig')
     -- setup LSP server configs
     -- TODO: somehow manage this with handlers???
 
@@ -55,17 +55,22 @@ return {
         end
         bind_method_normal_key('K', vim.lsp.buf.hover, { border = "single" })
         bind_method_normal_key('<leader>ld', vim.lsp.buf.definition)
-        bind_method_normal_key('<leader>lD', vim.lsp.buf.declaration)
         bind_method_normal_key('<leader>li', vim.lsp.buf.implementation)
         bind_method_normal_key('<leader>lt', vim.lsp.buf.type_definition)
         bind_method_normal_key('<leader>lr', vim.lsp.buf.references)
         bind_method_normal_key('<leader>ls', vim.lsp.buf.signature_help)
+        bind_method_normal_key('<leader>la', vim.lsp.buf.code_action)
+
+        bind_method_normal_key('<leader>lh', vim.lsp.buf.document_highlight)
+        bind_method_normal_key('<leader>lc', vim.lsp.buf.clear_references)
+
+        -- diagnostics
+        bind_method_normal_key('<leader>lf', vim.diagnostic.open_float, { border = "single"})
+        bind_method_normal_key('[d', vim.diagnostic.get_next)
+        bind_method_normal_key(']d', vim.diagnostic.get_prev)
+
         -- refactor rename
         bind_method_normal_key('<leader>R', vim.lsp.buf.rename)
-        bind_method_normal_key('<leader>la', vim.lsp.buf.code_action)
-        bind_method_normal_key('<leader>lf', vim.lsp.buf.open_float)
-        bind_method_normal_key('[d', vim.lsp.buf.goto_prev)
-        bind_method_normal_key(']d', vim.lsp.buf.goto_next)
         -- format file
         bind_method_normal_key('<leader>F',
           vim.lsp.buf.format, { bufnr = args.buf, id = c.id }
