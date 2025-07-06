@@ -62,3 +62,11 @@ git log --oneline | <leader>gl
 git log  | <leader>gL 
 git stage  | <leader>gSS 
 git stage pop | <leader>gSP 
+
+## Telescope @quicksearch
+View git status | :Telescope git_status
+View git commits | :Telescope git_commits
+View git commits for file in current buffer | :Telescope git_bcommits
+View git files | :Telescope git_files
+View git stash | :Telescope git_stash
+View git branches | :Telescope git_branches
