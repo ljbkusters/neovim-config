@@ -2,6 +2,6 @@
 return {
   "airblade/vim-gitgutter",
   config = function()
-    vim.keymap.set("n", "<leader>ht", ":GitGutterLineHighlightsToggle<CR>")
+    vim.keymap.set("n", "<leader>ht", "<cmd>GitGutterLineHighlightsToggle<CR>")
   end
 }
