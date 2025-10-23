@@ -70,3 +70,29 @@ View git commits for file in current buffer | :Telescope git_bcommits
 View git files | :Telescope git_files
 View git stash | :Telescope git_stash
 View git branches | :Telescope git_branches
+
+## Marks
+Set mark `x` | mx               
+Set the next available alphabetical (lowercase) mark | m,              
+Toggle the next available mark at the current line | m;              
+Delete mark `x` | dmx             
+Delete all marks on the current line | dm-             
+Delete all marks in the current buffer | dm<space>       
+Move to next mark | m]              
+Move to previous mark | m[              
+Preview mark. This will prompt you for a specific mark to                 | m:              
+preview; press <cr> to preview the next mark.
+Add a bookmark from bookmark group[0-9]. | m[0-9]          
+Delete all bookmarks from bookmark group[0-9]. | dm[0-9]         
+Move to the next bookmark having the same type as the bookmark under the cursor. Works across buffers. | m} 
+Move to the previous bookmark having the same type as the bookmark under the cursor. Works across buffers. | m{
+Delete the bookmark under the cursor. | dm=
+
+## virtualedit
+Allows editing to the end of lines only | :set virtualedit=block
+Allows editing past the end of lines | :set virtualedit=all
+
+## Windows-Clipboard
+Enable Windows system clipboard copying via win32yank.exe | :EnableWindowsClipboard
+Disable Windows system clipboard copying via win32yank.exe | :DisableWindowsClipboard
+Toggle Windows system clipboard copying via win32yank.exe | :ToggleWindowsClipboard
