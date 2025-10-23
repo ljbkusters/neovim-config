@@ -33,6 +33,13 @@ return {
       ensure_installed = {
         "lua_ls",
         "pyright",
+        -- Web development
+        "tsserver",
+        "eslint",
+        "tailwindcss",
+        "html",
+        "cssls",
+        "jsonls",
       },
       automatic_enable = true,
     })
