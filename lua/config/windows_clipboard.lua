@@ -1,0 +1,51 @@
+-- local _clip = {}
+-- -- Track clipboard integration state
+-- _clip.windows_clipboard_enabled = false
+-- 
+-- _clip.use_local_clipboard = function ()
+--   -- Disable clipboard provider
+--   vim.g.clipboard = nil
+--   vim.notify("System clipboard disabled (win32yank)", vim.log.levels.INFO)
+--   _clip.windows_clipboard_enabled = false
+-- end
+-- 
+-- _clip.use_windows_clipboard = function ()
+--   -- Enable win32yank clipboard integration
+--   vim.g.clipboard = {
+--     name = "win32yank-wsl",
+--     copy = {
+--       ["+"] = "win32yank.exe -i --crlf",
+--       ["*"] = "win32yank.exe -i --crlf",
+--     },
+--     paste = {
+--       ["+"] = "win32yank.exe -o --lf",
+--       ["*"] = "win32yank.exe -o --lf",
+--     },
+--     cache_enabled = 0,
+--   }
+--   vim.notify("System clipboard enabled (win32yank)", vim.log.levels.INFO)
+--   _clip.windows_clipboard_enabled = true
+-- end
+-- 
+-- _clip.toggle_windows_clipboard = function()
+--   if _clip.windows_clipboard_enabled then
+--     _clip.use_local_clipboard()
+--   else
+--     _clip.use_windows_clipboard()
+--   end
+-- end
+-- 
+-- _clip.print_windows_clipboard_status = function()
+--    print(_clip.windows_clipboard_enabled)
+-- end
+-- 
+-- -- Create a Neovim command to toggle clipboard
+-- vim.api.nvim_create_user_command("EnableWindowsClipboard", _clip.use_windows_clipboard, {})
+-- vim.api.nvim_create_user_command("DisableWindowsClipboard", _clip.use_local_clipboard, {})
+-- vim.api.nvim_create_user_command("ToggleWindowsClipboard", _clip.toggle_windows_clipboard, {})
+-- vim.api.nvim_create_user_command("StatusWindowsClipboard", _clip.windows_clipboard_status, {})
+-- 
+-- -- auto enable windows clipboard when using wsl
+-- if vim.fn.has('wsl') == 1 then
+--   _clip.use_windows_clipboard()
+-- end
