@@ -46,9 +46,6 @@ return {
       automatic_enable = true,
     })
 
-    -- setup LSP server configs
-    -- TODO: somehow manage this with handlers???
-
     -- LSP functinality bindings
     vim.api.nvim_create_autocmd('LspAttach', {
       -- this callback will be called each time the LspAttach hook is entered
