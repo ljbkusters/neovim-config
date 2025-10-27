@@ -40,6 +40,8 @@ return {
         "html",
         "cssls",
         "jsonls",
+        -- latex
+        "texlab",
       },
       automatic_enable = true,
     })
