@@ -34,7 +34,7 @@ return {
         "lua_ls",
         "pyright",
         -- Web development
-        "tsserver",
+        "ts_ls",
         "eslint",
         "tailwindcss",
         "html",
