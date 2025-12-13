@@ -25,3 +25,25 @@ vim.keymap.set("n", "<space>st", function()
   vim.cmd.wincmd("J") -- put at bottom of screen
   vim.api.nvim_win_set_height(0, 8) -- set hight
 end)
+
+local function edit_and_reload_config()
+  -- 1. Get the path to the config file
+  local config_file = vim.env.HOME .. '/.config/nvim/'
+
+  -- 2. Open the config file in a new tab
+  vim.cmd('tabedit ' .. config_file)
+
+  -- 3. Change the current working directory (cwd) *for that specific buffer*
+  local config_dir = vim.env.HOME .. '/.config/nvim'
+  vim.cmd(' lcd ' .. config_dir)
+end
+
+-- Define the custom user command
+vim.api.nvim_create_user_command('NvimEditConfig', edit_and_reload_config, {
+  desc = 'Edit Neovim config in new tab and reload on close.',
+  -- No options needed for this command
+})
+vim.api.nvim_create_user_command('nec', edit_and_reload_config, {
+  desc = 'Edit Neovim config in new tab and reload on close.',
+  -- No options needed for this command
+})
