@@ -2,6 +2,15 @@
 Source vimrc config (Note: this does not reload plugins!) | <leader>sv
 Open mappings view | <leader>m
 
+## DAP @debugger @debug
+set breakpoint | <leader>db
+continue / start | <leader>dc
+step over | <leader>do
+step into | <leader>di
+step out | <leader>dO
+terminate debugging | <leader>dq
+toggle DAP ui | <leader>du
+
 ## surround @nvim-surround
 general | [y(add)/d(delete)/c(change)]s[motion][character]
 add surround: surround_words: surr*ound_words -> (surround_words)  | ysiw)
