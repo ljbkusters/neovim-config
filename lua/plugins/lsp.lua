@@ -32,6 +32,7 @@ return {
     require('mason-lspconfig').setup({
       ensure_installed = {
         "lua_ls",
+        -- Python
         "pyright",
         -- Web development
         "ts_ls",
@@ -76,7 +77,8 @@ return {
         bind_method_normal_key(']d', vim.diagnostic.get_prev)
 
         -- refactor rename
-        bind_method_normal_key('<leader>R', vim.lsp.buf.rename)
+        -- bind_method_normal_key('<leader>R', vim.lsp.buf.rename)
+        vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename)
         -- format file
         bind_method_normal_key('<leader>F',
           vim.lsp.buf.format, { bufnr = args.buf, id = c.id }
