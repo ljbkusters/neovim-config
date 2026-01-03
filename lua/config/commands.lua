@@ -43,7 +43,3 @@ vim.api.nvim_create_user_command('NvimEditConfig', edit_and_reload_config, {
   desc = 'Edit Neovim config in new tab and reload on close.',
   -- No options needed for this command
 })
-vim.api.nvim_create_user_command('nec', edit_and_reload_config, {
-  desc = 'Edit Neovim config in new tab and reload on close.',
-  -- No options needed for this command
-})
