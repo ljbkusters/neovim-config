@@ -42,6 +42,7 @@ return {
         "html",
         "cssls",
         "jsonls",
+        "svelte",
         -- latex
         "texlab",
       },
