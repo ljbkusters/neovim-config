@@ -18,6 +18,7 @@ return {
     { "mason-org/mason.nvim", opts = {} },
     -- manage LSP client
     { "neovim/nvim-lspconfig" },
+    { "nvim-telescope/telescope.nvim" },
     -- Add `vim` globals for vim configuration
     {
       "folke/lazydev.nvim",
@@ -47,6 +48,7 @@ return {
       automatic_enable = true,
     })
 
+    local telescope = require('telescope.builtin')
     -- LSP functinality bindings
     vim.api.nvim_create_autocmd('LspAttach', {
       -- this callback will be called each time the LspAttach hook is entered
@@ -61,18 +63,19 @@ return {
           vim.keymap.set('n', key_binding, function() method(method_opts) end, opts)
         end
         bind_method_normal_key('K', vim.lsp.buf.hover, { border = "single" })
-        bind_method_normal_key('<leader>ld', vim.lsp.buf.definition)
-        bind_method_normal_key('<leader>li', vim.lsp.buf.implementation)
-        bind_method_normal_key('<leader>lt', vim.lsp.buf.type_definition)
-        bind_method_normal_key('<leader>lr', vim.lsp.buf.references)
-        bind_method_normal_key('<leader>ls', vim.lsp.buf.signature_help)
-        bind_method_normal_key('<leader>la', vim.lsp.buf.code_action)
+        bind_method_normal_key('<leader>ld', telescope.lsp_definitions)
+        bind_method_normal_key('<leader>li', telescope.lsp_implementations)
+        bind_method_normal_key('<leader>lt', telescope.lsp_type_definitions)
+        bind_method_normal_key('<leader>lr', telescope.lsp_references)
+        bind_method_normal_key('<leader>ls', telescope.lsp_signature_help)
+        bind_method_normal_key('<leader>la', telescope.lsp_code_action)
 
-        bind_method_normal_key('<leader>lh', vim.lsp.buf.document_highlight)
-        bind_method_normal_key('<leader>lc', vim.lsp.buf.clear_references)
+        bind_method_normal_key('<leader>lh', telescope.lsp_document_highlight)
+        bind_method_normal_key('<leader>lc', telescope.lsp_clear_references)
 
         -- diagnostics
         bind_method_normal_key('<leader>lf', vim.diagnostic.open_float, { border = "single"})
+        bind_method_normal_key('<leader>lF', telescope.diagnostics)
         bind_method_normal_key('[d', vim.diagnostic.get_next)
         bind_method_normal_key(']d', vim.diagnostic.get_prev)
 
