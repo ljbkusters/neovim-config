@@ -68,11 +68,11 @@ return {
         bind_method_normal_key('<leader>li', telescope.lsp_implementations)
         bind_method_normal_key('<leader>lt', telescope.lsp_type_definitions)
         bind_method_normal_key('<leader>lr', telescope.lsp_references)
-        bind_method_normal_key('<leader>ls', telescope.lsp_signature_help)
-        bind_method_normal_key('<leader>la', telescope.lsp_code_action)
-
-        bind_method_normal_key('<leader>lh', telescope.lsp_document_highlight)
-        bind_method_normal_key('<leader>lc', telescope.lsp_clear_references)
+        bind_method_normal_key('<leader>ls', vim.lsp.buf.signature_help)
+        bind_method_normal_key('<leader>lS', telescope.lsp_document_symbols)
+        bind_method_normal_key('<leader>la', vim.lsp.buf.code_action)
+        bind_method_normal_key('<leader>lh', vim.lsp.buf.document_highlight)
+        bind_method_normal_key('<leader>lc', vim.lsp.buf.clear_references)
 
         -- diagnostics
         bind_method_normal_key('<leader>lf', vim.diagnostic.open_float, { border = "single"})

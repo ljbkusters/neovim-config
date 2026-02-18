@@ -35,16 +35,17 @@ open {i}-th (harpoon) terminal | <leader>t{i}
 
 ## LSP @diagnostics
 LSP hover | K 
-jump to definition | <leader>ld 
-jump to declaration | <leader>lD 
+jump to definition (telescope) | <leader>ld 
 jump to implementation | <leader>li 
 show type definition | <leader>lt 
 show references | <leader>lr 
 show signature help | <leader>ls 
+show document symbols (telescope) | <leader>lS 
 refactor rename symbol | <leader>R 
 show code actions | <leader>la 
 show diagnostics | <leader>l? 
-open float  | <leader>lf 
+open float diagnostics | <leader>lf 
+open all diagnostics (telescope) | <leader>lF
 jump to next diagnostic | [d 
 jump to previous diagnostic | ]d 
 format | <leader>F 
