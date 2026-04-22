@@ -10,7 +10,7 @@ vim.keymap.set("n", "<leader>sv", ":source $MYVIMRC<CR>")
 -- open mappings view
 vim.keymap.set("n", "<leader>m", ":map<CR>")
 
--- ease of life
+-- === ease of life ===
 vim.keymap.set("n", "J", "mzJ`z") -- J but cursor stays in place
 vim.keymap.set("n", "n", "nzzzv") -- search n but cursor stays in place
 vim.keymap.set("n", "N", "Nzzzv") -- search N but cursor stays in place
@@ -19,3 +19,6 @@ vim.keymap.set("n", "<leader>so", ":source %<CR>")
 
 -- test nvim lua plugin file using plenary busted
 vim.keymap.set("n", "<leader>tf", "<cmd>PlenaryBustedFile %<CR>")
+
+-- === Terminal mode remaps ===
+vim.keymap.set("t", "<C-\\><C-\\>", function() vim.cmd("stopinsert") end)
