@@ -5,18 +5,13 @@ vim.api.nvim_create_user_command("WQ", function() vim.cmd("wq") end, { bang = tr
 vim.api.nvim_create_user_command("Wq", function() vim.cmd("wq") end, { bang = true })
 
 
--- runs every time a terminal is opened
-vim.api.nvim_create_autocmd('TermOpen', {
-  group = vim.api.nvim_create_augroup('custom-term-open', {clear = true}),
-  callback = function()
-    -- disable line numbering
-    vim.opt.number = false
-    vim.opt.relativenumber = false
-    -- source bashrc in terminal
-    local job_id = vim.bo.channel
-    vim.fn.chansend(job_id, {"source ~/.config/bash/.bashrc\r\nclear \r\n"})
-  end,
-})
+vim.api.nvim_create_user_command("T", function()
+  vim.cmd("sp term://bash")
+end, {})
+
+vim.api.nvim_create_user_command("VT", function()
+  vim.cmd("vsp term://bash")
+end, {})
 
 -- open a small terminal below
 vim.keymap.set("n", "<space>st", function()
