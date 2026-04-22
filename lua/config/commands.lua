@@ -7,10 +7,12 @@ vim.api.nvim_create_user_command("Wq", function() vim.cmd("wq") end, { bang = tr
 
 vim.api.nvim_create_user_command("T", function()
   vim.cmd("sp term://bash")
+  vim.cmd("startinsert")
 end, {})
 
 vim.api.nvim_create_user_command("VT", function()
   vim.cmd("vsp term://bash")
+  vim.cmd("startinsert")
 end, {})
 
 -- open a small terminal below
@@ -19,6 +21,7 @@ vim.keymap.set("n", "<space>st", function()
   vim.cmd.term() -- open terminal
   vim.cmd.wincmd("J") -- put at bottom of screen
   vim.api.nvim_win_set_height(0, 8) -- set hight
+  vim.cmd("startinsert")
 end)
 
 local function edit_and_reload_config()
