@@ -1,3 +1,7 @@
+## colorscheme @DarkTheme @LightTheme
+Switch to light theme | :LightTheme
+Switch to dark theme | :DarkTheme
+
 ## default @neovim @simple
 Source vimrc config (Note: this does not reload plugins!) | <leader>sv
 Open mappings view | <leader>m
