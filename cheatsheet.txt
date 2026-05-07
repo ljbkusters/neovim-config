@@ -1,3 +1,16 @@
+## claude @ClaudeCode
+Claude code namespace ('A'I) | <leader>a
+Toggle Claude | <leader>ac
+Focus Claude | <leader>af
+Resume Claude | <leader>ar
+Continue Claude | <leader>aC
+Select Claude model | <leader>am
+Add current buffer (claude) | <leader>ab
+Send to Claude | <leader>as
+Add file (claude) | <leader>as
+Accept diff (claude) | <leader>aa
+Deny diff (claude) | <leader>ad
+
 ## colorscheme @DarkTheme @LightTheme
 Switch to light theme | :LightTheme
 Switch to dark theme | :DarkTheme

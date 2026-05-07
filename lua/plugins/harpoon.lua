@@ -29,18 +29,18 @@ return {
 
     -- quick jump to files
     vim.keymap.set('n', '<leader>h1', function() nav_to_file(1) end);
-    vim.keymap.set('t', '<leader>h1', function() nav_to_file(1) end);
+    -- vim.keymap.set('t', '<leader>h1', function() nav_to_file(1) end);
     vim.keymap.set('n', '<leader>h2', function() nav_to_file(2) end);
-    vim.keymap.set('t', '<leader>h2', function() nav_to_file(2) end);
+    -- vim.keymap.set('t', '<leader>h2', function() nav_to_file(2) end);
     vim.keymap.set('n', '<leader>h3', function() nav_to_file(3) end);
-    vim.keymap.set('t', '<leader>h3', function() nav_to_file(3) end);
+    -- vim.keymap.set('t', '<leader>h3', function() nav_to_file(3) end);
     vim.keymap.set('n', '<leader>h4', function() nav_to_file(4) end);
-    vim.keymap.set('t', '<leader>h4', function() nav_to_file(4) end);
+    -- vim.keymap.set('t', '<leader>h4', function() nav_to_file(4) end);
 
     -- terminal mappings
     vim.keymap.set('n', '<leader>t1', function() open_terminal(1) end);
     vim.keymap.set('n', '<leader>t2', function() open_terminal(2) end);
-    vim.keymap.set('t', '<leader>t1', function() open_terminal(1) end);
-    vim.keymap.set('t', '<leader>t2', function() open_terminal(2) end);
+    -- vim.keymap.set('t', '<leader>t1', function() open_terminal(1) end);
+    -- vim.keymap.set('t', '<leader>t2', function() open_terminal(2) end);
   end,
 }
