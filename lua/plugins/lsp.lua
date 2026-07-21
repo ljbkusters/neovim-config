@@ -15,7 +15,7 @@ return {
   "mason-org/mason-lspconfig.nvim",
   dependencies = {
     -- manage LSP servers
-    { "mason-org/mason.nvim", opts = {} },
+    { "mason-org/mason.nvim",         opts = {} },
     -- manage LSP client
     { "neovim/nvim-lspconfig" },
     { "nvim-telescope/telescope.nvim" },
@@ -28,6 +28,9 @@ return {
         },
       },
     },
+    { "nvimtools/none-ls.nvim", },
+    { 'nvimtools/none-ls-extras.nvim' },
+    { 'jayp0521/mason-null-ls.nvim' },
   },
   config = function()
     require('mason-lspconfig').setup({
@@ -47,6 +50,26 @@ return {
         "texlab",
       },
       automatic_enable = true,
+    })
+
+    require("mason-null-ls").setup({
+      ensure_installed = {
+        "ruff",     -- python formatter
+        "prettier", -- txt/md/json/yaml formatter
+        "shfmt",    -- bash/shell formatter
+      },
+      automatic_installation = true,
+    })
+
+
+    local null_ls = require("null-ls")
+    null_ls.setup({
+      sources = {
+        require('none-ls.formatting.ruff').with({ extra_args = { '--extend-select', 'I' } }),
+        require('none-ls.formatting.ruff_format'),
+        null_ls.builtins.formatting.prettier.with({ filetypes = { 'json', 'markdown', 'yaml' } }),
+        null_ls.builtins.formatting.shfmt.with({ args = { '-i', '4' } }),
+      },
     })
 
     local telescope = require('telescope.builtin')
@@ -75,7 +98,7 @@ return {
         bind_method_normal_key('<leader>lc', vim.lsp.buf.clear_references)
 
         -- diagnostics
-        bind_method_normal_key('<leader>lf', vim.diagnostic.open_float, { border = "single"})
+        bind_method_normal_key('<leader>lf', vim.diagnostic.open_float, { border = "single" })
         bind_method_normal_key('<leader>lF', telescope.diagnostics)
         bind_method_normal_key('[d', vim.diagnostic.get_next)
         bind_method_normal_key(']d', vim.diagnostic.get_prev)
@@ -84,9 +107,15 @@ return {
         -- bind_method_normal_key('<leader>R', vim.lsp.buf.rename)
         vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename)
         -- format file
-        bind_method_normal_key('<leader>F',
-          vim.lsp.buf.format, { bufnr = args.buf, id = c.id }
-        )
+        vim.keymap.set('n', '<leader>F', function()
+          vim.lsp.buf.format({
+            bufnr = args.buf,
+            filter = function(client)
+              return client.name == "null-ls"
+            end,
+          })
+        end, { buffer = true })
+
       end,
     })
   end,
