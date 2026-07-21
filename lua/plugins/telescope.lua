@@ -2,7 +2,7 @@ return {
   "nvim-telescope/telescope.nvim",
   tag='0.1.8',
   dependencies = {
-    'nvim-lua/plenary.nvim' 
+    'nvim-lua/plenary.nvim'
   },
   config = function()
     local builtin = require('telescope.builtin')
@@ -16,5 +16,7 @@ return {
     nmap('<leader>fg', builtin.git_files)
     -- find search (grep)
     nmap('<leader>fs', builtin.live_grep)
+    -- find buffers
+    nmap('<leader>fb', builtin.buffers)
   end
 }
